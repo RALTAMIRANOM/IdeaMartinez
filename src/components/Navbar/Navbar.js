@@ -10,6 +10,7 @@ import {LunchDining,SportsBar,LocalPizza,RamenDining} from '@mui/icons-material/
 import {makeStyles} from '@mui/styles/'
 import theme from '../../themeConfig'
 import Stack from '@mui/material/Stack';
+import CartWidget from '../CartWidget/CartWidget';
 
 const useStyle = makeStyles({
     myButton: {
@@ -53,7 +54,7 @@ const Navbar =() => {
                                 color = 'secondary'
                                 />*/}
                             </Typography>
-                            <h5 className={classes.title}>Orlando's Broaster </h5>
+                            <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
                             
                             <Stack spacing={2} direction="row" className={classes.title}>
                                 <Button variant="outlined" color="secondary" size="medium" startIcon={<LunchDining/>}>Hamburguesas</Button>
@@ -63,6 +64,7 @@ const Navbar =() => {
                             </Stack>
                             {/* <Button className={classes.myButton}>hola</Button> */}
                             {/*href='link' en el button*/}
+                            <CartWidget/>
                         </Toolbar>
                     </AppBar>
                 </ThemeProvider>

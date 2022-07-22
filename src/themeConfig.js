@@ -1,5 +1,6 @@
 import {createTheme} from '@mui/material/styles';
-import {yellow,green} from '@mui/material/colors'
+import {yellow,green} from '@mui/material/colors';
+
 const theme = createTheme({
     palette: {
       secondary: {
@@ -13,6 +14,12 @@ const theme = createTheme({
         //main: '#E86524',
         main: green[800]
       },
+      success: {
+        // This is green.A700 as hex.
+        //main: '#E86524',
+        main: '#FFFFFF'
+      },
+
       
     },
   });
