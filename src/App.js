@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Counter from './components/Counter/Counter';
 
+import {ThemeProvider} from '@mui/material/styles'
+import theme from './themeConfig'
+import {makeStyles} from '@mui/styles/'
+const useStyle = makeStyles({
+  offset: theme.mixins.toolbar
+})
 function App() {
+
+  //const imagen = <img src="url" alt="imagen"/>
+  const classes = useStyle()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <ThemeProvider theme={theme}>
+    {/* <div className="App"> */}
+      
+      {/*<header className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Bienvenidos
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <button style={{ color: 'red', backgroundColor: 'blue', fontSize: '30px'}}>Boton</button>
+        {imagen}
+      </header>*/}
+      <Navbar />
+      <div className={classes.offset}></div>
+      {/* <Counter /> */}
+
+    {/* </div> */}
+    </ThemeProvider>
   );
 }
 
