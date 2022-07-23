@@ -29,7 +29,6 @@ function App() {
       <Navbar />
       
       <div className={classes.offset}></div>
-      <div/>
       <ItemListContainer greeting='Pruebe la mejor comida rápida de Lima-Perú'></ItemListContainer>
       {/* <Counter /> */}
 

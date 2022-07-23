@@ -2,7 +2,7 @@ import './Navbar.css'
 //Se utiliza button
 //import Button from '../Button/Button' 
 import App from '../../App';
-import { AppBar,Button, Toolbar, Typography } from '@mui/material';
+import { AppBar,Button, Toolbar, Typography, Box } from '@mui/material';
 import { ClassNames } from '@emotion/react';
 import { createTheme, ThemeProvider} from '@mui/material/styles';
 //import {Fastfood} from '@mui/icons-material/';
@@ -29,9 +29,16 @@ const useStyle = makeStyles({
         marginLeft: theme.spacing(2),
     },
     title:{
-        flexGrow: 1,
+        margin: 0,
     },
-    offset: theme.mixins.toolbar
+    offset: theme.mixins.toolbar,
+    separatorPrin:{
+
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+
+    }
 })
 const Navbar =() => {
 
@@ -47,16 +54,15 @@ const Navbar =() => {
         <nav className="Navbar">
                 <ThemeProvider theme={theme}>
                     <AppBar color="primary">
-                        <Toolbar>
-                            <Typography>{/*variant="h6" align="center" paragraph*/}
-                                <img src='images/fastfood.svg' height="40px" className={classes.separator}></img>
+                        <Toolbar className={classes.separatorPrin}>
+                            <Box display="flex" flexDirection="column" alignItems="center" >
+                                <img src='images/fastfood.svg' height="40px"></img>
                                 {/*<Fastfood
                                 color = 'secondary'
-                                />*/}
-                            </Typography>
-                            <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
-                            
-                            <Stack spacing={2} direction="row" className={classes.title}>
+                                />*/}                            
+                                <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
+                            </Box>
+                            <Stack spacing={2} direction="row">
                                 <Button variant="outlined" color="secondary" size="medium" startIcon={<LunchDining/>}>Hamburguesas</Button>
                                 <Button variant="outlined" color="secondary" size="medium" startIcon={<LocalPizza/>}>Pizza</Button>
                                 <Button variant="outlined" color="secondary" size="medium" startIcon={<RamenDining/>}>Ramens</Button>

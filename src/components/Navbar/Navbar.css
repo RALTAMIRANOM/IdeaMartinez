@@ -2,3 +2,7 @@
     display: flex;
     justify-content: center;
 }
+
+.BottonStyle{
+    max-width: 20px;
+}
