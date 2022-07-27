@@ -2,28 +2,28 @@
 const products =[
     {
         id: '1',
-        name: 'Carne con Queso',
+        name: 'Hamburguesa de carne con queso',
         price: 15,
         category: 'hamburguesa',
-        img:'https://www.infobae.com/new-resizer/aMMEFTnbZGqtImR-JrKJRVzPX7I=/768x432/filters:format(webp):quality(85)/arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/FJKXKQKMMJBV7KQ7XQ3YNFO7LU.jpg',
+        img:'https://simplementerecetas.com/wp-content/uploads/2021/03/Hamburguesas-de-queso-en-la-freidora-de-aire.png',
         stock: 100,
-        description: 'Descripcion de Carne con Queso'
+        description: 'Descripcion de Hamburguesa de carne con queso'
     },
     {id: '2',
-    name: 'Doble carne y doble queso',
+    name: 'Hamburguesa con doble carne y doble queso',
     price: 30,
     category: 'hamburguesa',
     img:'https://www.cocinayvino.com/wp-content/uploads/2018/02/64513894_ml-696x464.jpg',
     stock: 200,
-    description: 'Descripcion de Doble carne y doble queso'
+    description: 'Descripcion de Hamburguesa con doble carne y doble queso'
     },
     {id: '3',
-    name: 'Pizza de queso',
+    name: 'Pizza de mozzarella',
     price: 40,
     category: 'pizza',
     img:'https://i0.wp.com/irecetasfaciles.com/wp-content/uploads/2019/08/pizza-de-jamon-queso-y-tocino.jpg?resize=681%2C434&ssl=1',
     stock: 100,
-    description: 'Descripcion de Pizza de queso'
+    description: 'Descripcion de Pizza de mozzarella'
     },
     {id: '4',
     name: 'Ramen estilo Naruto',
@@ -46,7 +46,7 @@ export const getProducts = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 3000)
+        }, 2000)
         
     }
     )
