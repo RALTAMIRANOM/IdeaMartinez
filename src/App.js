@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Counter from './components/Counter/Counter';
+import ItemCount from './components/ItemCount/ItemCount';
+import {useState} from 'react'
 
 import {ThemeProvider} from '@mui/material/styles'
 import theme from './themeConfig'
@@ -12,9 +13,14 @@ const useStyle = makeStyles({
 })
 
 function App() {
-
+  const [show, setShow] = useState (true)
   //const imagen = <img src="url" alt="imagen"/>
   const classes = useStyle()
+
+  // const handleOnAdd = (quantity) => {
+  //   console.log(`la cantidad agregada es: ${quantity}`)
+  // }
+
   return (
     <ThemeProvider theme={theme}>
     {/* <div className="App"> */}
@@ -27,11 +33,15 @@ function App() {
         {imagen}
       </header>*/}
       <Navbar />
-      
       <div className={classes.offset}></div>
-      <ItemListContainer greeting='Pruebe la mejor comida rápida de Lima-Perú'></ItemListContainer>
-      {/* <Counter /> */}
+      
+      {/* <button onClick={() =>setShow(!show) }>Mostrar/Ocultar</button> */}
+      {/* {show ? <ItemCount /> : 
+        null
+      } */}
 
+      <ItemListContainer greeting='Pruebe la mejor comida rápida de Lima-Perú'></ItemListContainer>
+      {/* <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/> */}
     {/* </div> */}
     </ThemeProvider>
   );

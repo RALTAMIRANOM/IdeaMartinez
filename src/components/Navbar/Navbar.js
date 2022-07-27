@@ -2,14 +2,13 @@ import './Navbar.css'
 //Se utiliza button
 //import Button from '../Button/Button' 
 import App from '../../App';
-import { AppBar,Button, Toolbar, Typography, Box } from '@mui/material';
+import { AppBar,Button, Toolbar, Typography, Box, Stack } from '@mui/material';
 import { ClassNames } from '@emotion/react';
 import { createTheme, ThemeProvider} from '@mui/material/styles';
 //import {Fastfood} from '@mui/icons-material/';
 import {LunchDining,SportsBar,LocalPizza,RamenDining} from '@mui/icons-material/'
 import {makeStyles} from '@mui/styles/'
 import theme from '../../themeConfig'
-import Stack from '@mui/material/Stack';
 import CartWidget from '../CartWidget/CartWidget';
 
 const useStyle = makeStyles({
