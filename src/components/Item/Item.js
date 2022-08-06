@@ -1,28 +1,15 @@
 import * as React from 'react';
-import { ImageListItem,ImageListItemBar, ThemeProvider, Button, Box, Stack } from '@mui/material';
+import { ImageListItem,ImageListItemBar, ThemeProvider, Button} from '@mui/material';
 import theme from '../../themeConfig'
-import {makeStyles} from '@mui/styles/'
-
-const useStyle = makeStyles({
-    text:{
-        marginTop:5,
-    },
-    separatorPrin:{
-
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-
-    }
-})
+import { useState } from 'react';
 
 const Item = ({product}) => {
-    const classes = useStyle()
+    const [selectedImage, setSelectedImage] = useState(0);
     return (
         <ThemeProvider theme={theme}>
-            <ImageListItem key={product.img}>
+            <ImageListItem key={product.img[selectedImage].id_img}>
             <img
-                src={product.img} alt={product.name}
+                src={product.img[selectedImage].imglist} alt={product.name}
             />
             <ImageListItemBar
                 title={product.name}

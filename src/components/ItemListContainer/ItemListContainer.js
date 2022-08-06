@@ -5,7 +5,7 @@ import { getProducts } from '../../asyncMock';
 import ItemList from '../ItemList/ItemList';
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
-    console.log(products)
+    
     useEffect (() => {
         getProducts().then(products => {
             setProducts(products)

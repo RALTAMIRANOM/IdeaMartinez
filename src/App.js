@@ -1,19 +1,20 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import ItemCount from './components/ItemCount/ItemCount';
-import {useState} from 'react'
+// import ItemCount from './components/ItemCount/ItemCount';
+// import {useState} from 'react'
 
 import {ThemeProvider} from '@mui/material/styles'
 import theme from './themeConfig'
 import {makeStyles} from '@mui/styles/'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 const useStyle = makeStyles({
   offset: theme.mixins.toolbar
 })
 
 function App() {
-  const [show, setShow] = useState (true)
+  // const [show, setShow] = useState (true)
   //const imagen = <img src="url" alt="imagen"/>
   const classes = useStyle()
 
@@ -33,8 +34,9 @@ function App() {
         {imagen}
       </header>*/}
       <Navbar />
-      <div className={classes.offset}></div>
       
+      <div className={classes.offset}></div>
+      <ItemDetailContainer/>
       {/* <button onClick={() =>setShow(!show) }>Mostrar/Ocultar</button> */}
       {/* {show ? <ItemCount /> : 
         null

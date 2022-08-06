@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react'
 import { useState } from 'react'
-import { Button, IconButton , ThemeProvider, Stack, Box, Toolbar } from '@mui/material';
+import { Button, IconButton , ThemeProvider, Stack, Box } from '@mui/material';
 import {Remove, Add} from '@mui/icons-material/'
 import theme from '../../themeConfig'
 import {makeStyles} from '@mui/styles/'
@@ -19,7 +19,7 @@ const useStyle = makeStyles({
 })
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)
-    const [show, setShow] = useState (true)
+    // const [show, setShow] = useState (true)
     // const [text, setText] = useState('Bienvenido')
     // const [title, setTitle] = useState('Hola')
     //let count = 10
@@ -38,16 +38,16 @@ const ItemCount = ({stock, initial, onAdd}) => {
     //     setTitle(title === 'Hola' ? 'Chau' : 'Hola')
     // },[count])//Esto se puede usar cuando se añadir un producto al carrito
 
-    const conditional = () => {
-        if (count <= stock)
-            onAdd(count)
-        else 
-            console.log(`la cantidad agregada supera el stock`)
-    }
+    // const conditional = () => {
+    //     if (count <= stock)
+    //         onAdd(count)
+    //     else 
+    //         console.log(`la cantidad agregada supera el stock`)
+    // }
     
     const increment = () => {
         //count++
-        // if(count < stock)
+        if(count < stock)
             setCount(count + 1)
     }
 
@@ -57,7 +57,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     // console.log('render')
-    const classes = useStyle()
+    //const classes = useStyle()
 
     return(
         <ThemeProvider theme={theme}>
@@ -65,15 +65,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <button onClick={() => setTitle(title === 'Hola' ? 'Chau' : 'Hola')}>Saludar</button>
             <h1>{text}</h1> */}
             <Box display="flex" flexDirection="column" alignItems="center" >
-                <Stack spacing={7}  direction="row">
+                <Stack  direction="row" alignItems="center" width="100%" maxWidth="150px" justifyContent="space-between">
                     <IconButton  color="primary" size="medium" onClick={decrement}> <Remove/> </IconButton >
-                    <h4 className={classes.title}>{count}</h4>
+                    <h4>{count}</h4>
                     {/* <button onClick={decrement}>Decrementar</button>
                     <button onClick={increment}>Incrementar</button> */}
                     <IconButton  color="primary" size="medium" onClick={increment}> <Add/> </IconButton >
                     {/* <button onClick={() => onAdd(count)}>Agregar al carrito</button> */}
                 </Stack>
-                <Button variant="outlined" color="primary" size="medium" onClick={conditional}>Agregar al carrito</Button>
+                <Button variant="outlined" color="primary" size="medium" onClick={onAdd(count)}>Agregar al carrito</Button>
             </Box>
         </ThemeProvider>
     )
