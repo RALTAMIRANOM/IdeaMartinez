@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ImageListItem,ImageListItemBar, ThemeProvider, Button} from '@mui/material';
 import theme from '../../themeConfig'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Item = ({product}) => {
     const [selectedImage, setSelectedImage] = useState(0);
@@ -20,7 +21,7 @@ const Item = ({product}) => {
                 subtitle={<span>Stock disponible: {product.stock}</span>}
                 position="below"
             />
-            <Button variant="outlined" color="primary" size="medium">Ver detalle del producto</Button>
+            <Button href={`/detail/${product.id}`} variant="outlined" color="primary" size="medium">Ver detalle del producto</Button>
             </ImageListItem>
         </ThemeProvider>
 

@@ -3,10 +3,14 @@ import { Button, Divider, Grid, Typography,Box } from "@mui/material"
 import ImageGrid from "../ImageGrid/ImageGrid";
 import { useState } from "react";
 import MainImage from "../MainImage/MainImage";
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({name,price,img,category,description,stock}) => {
     const [selectedImage, setSelectedImage] = useState(0);
 
+    const handleOnAdd = (quantity) => {
+        console.log(`la cantidad agregada es: ${quantity}`)
+    }
     
     return (
         //Mejorar vista del detalle     
@@ -33,10 +37,10 @@ const ItemDetail = ({name,price,img,category,description,stock}) => {
                         <Box mt={2}>
                             <Typography variant="h5">S/. {price}</Typography>
                         </Box>
-                        
-                        <Button variant="contained" color="primary" style={{marginTop: "auto"}}>
+                        <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/>
+                        {/* <Button variant="contained" color="primary" style={{marginTop: "auto"}}>
                             Añadir al carrito
-                        </Button> 
+                        </Button>  */}
                     </Grid>
                 </Grid>
             </Grid>            

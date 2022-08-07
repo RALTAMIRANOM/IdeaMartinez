@@ -54,18 +54,20 @@ const Navbar =() => {
                 <ThemeProvider theme={theme}>
                     <AppBar color="primary">
                         <Toolbar className={classes.separatorPrin}>
-                            <Box display="flex" flexDirection="column" alignItems="center" >
-                                <img src='images/fastfood.svg' height="40px"></img>
-                                {/*<Fastfood
-                                color = 'secondary'
-                                />*/}                            
-                                <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
-                            </Box>
+                            <Button href={`/`}>
+                                <Box display="flex" flexDirection="column" alignItems="center" >
+                                    <img src='images/fastfood.svg' height="40px"></img>
+                                    {/*<Fastfood
+                                    color = 'secondary'
+                                    />*/}                            
+                                    <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
+                                </Box>
+                            </Button>
                             <Stack spacing={2} direction="row">
-                                <Button variant="outlined" color="secondary" size="medium" startIcon={<LunchDining/>}>Hamburguesas</Button>
-                                <Button variant="outlined" color="secondary" size="medium" startIcon={<LocalPizza/>}>Pizza</Button>
-                                <Button variant="outlined" color="secondary" size="medium" startIcon={<RamenDining/>}>Ramens</Button>
-                                <Button variant="outlined" color="secondary" size="medium" startIcon={<SportsBar/>}>Cervezas</Button>
+                                <Button href={`/category/Hamburguesas`} variant="outlined" color="secondary" size="medium" startIcon={<LunchDining/>}>Hamburguesas</Button>
+                                <Button href={`/category/Pizzas`} variant="outlined" color="secondary" size="medium" startIcon={<LocalPizza/>}>Pizzas</Button>
+                                <Button href={`/category/Ramens`} variant="outlined" color="secondary" size="medium" startIcon={<RamenDining/>}>Ramens</Button>
+                                <Button href={`/category/Cervezas`} variant="outlined" color="secondary" size="medium" startIcon={<SportsBar/>}>Cervezas</Button>
                             </Stack>
                             {/* <Button className={classes.myButton}>hola</Button> */}
                             {/*href='link' en el button*/}

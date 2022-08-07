@@ -1,21 +1,38 @@
 import './ItemListContainer.css'
 import ItemCount from '../ItemCount/ItemCount';
 import {useState, useEffect} from 'react'
-import { getProducts } from '../../asyncMock';
+import { getProducts, getProductsByCategory } from '../../asyncMock';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
+
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
-    
+
+    const {categoryId} = useParams()
+
     useEffect (() => {
-        getProducts().then(products => {
+
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+
+        asyncFunction(categoryId).then(products => {
             setProducts(products)
+        }).catch( error => {
+            console.log(error)
         })
+        // if(!categoryId){
+        //     getProducts().then(product => {
+        //         setProduct(product)
+        //     })
+        // }else{
+        //     getProductsByCategory(categoryId).then(product => {
+        //         setProduct(product)
+        //     })
+        // }
 
-    },[])
-
-    const handleOnAdd = (quantity) => {
-        console.log(`la cantidad agregada es: ${quantity}`)
-    }
+    },[categoryId])
+    // const handleOnAdd = (quantity) => {
+    //     console.log(`la cantidad agregada es: ${quantity}`)
+    // }
 
     // const productsComp = products.map(prod => 
     //     <li key={prod.id}>{prod.name}</li>
@@ -31,7 +48,7 @@ const ItemListContainer = ({greeting}) => {
                 {/* {products.map(prod => <li key={prod.id}>{prod.name}</li>)}
             </ul> */}
             <ItemList products = {products}/>
-            <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/>
+            {/* <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/> */}
         </>
             
         // </div>
