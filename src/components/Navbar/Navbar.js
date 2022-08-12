@@ -10,6 +10,7 @@ import {LunchDining,SportsBar,LocalPizza,RamenDining} from '@mui/icons-material/
 import {makeStyles} from '@mui/styles/'
 import theme from '../../themeConfig'
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles({
     myButton: {
@@ -56,7 +57,7 @@ const Navbar =() => {
                         <Toolbar className={classes.separatorPrin}>
                             <Button href={`/`}>
                                 <Box display="flex" flexDirection="column" alignItems="center" >
-                                    <img src='images/fastfood.svg' height="40px"></img>
+                                    <img src='../images/fastfood.svg' height="40px"></img>
                                     {/*<Fastfood
                                     color = 'secondary'
                                     />*/}                            
@@ -64,10 +65,10 @@ const Navbar =() => {
                                 </Box>
                             </Button>
                             <Stack spacing={2} direction="row">
-                                <Button href={`/category/Hamburguesas`} variant="outlined" color="secondary" size="medium" startIcon={<LunchDining/>}>Hamburguesas</Button>
-                                <Button href={`/category/Pizzas`} variant="outlined" color="secondary" size="medium" startIcon={<LocalPizza/>}>Pizzas</Button>
-                                <Button href={`/category/Ramens`} variant="outlined" color="secondary" size="medium" startIcon={<RamenDining/>}>Ramens</Button>
-                                <Button href={`/category/Cervezas`} variant="outlined" color="secondary" size="medium" startIcon={<SportsBar/>}>Cervezas</Button>
+                                <Link to={`/category/Hamburguesas`} className="OptionNav"><LunchDining/>Hamburguesas</Link>
+                                <Link to={`/category/Pizzas`} className="OptionNav"><LocalPizza/>Pizzas</Link>
+                                <Link to={`/category/Ramens`} className="OptionNav"><RamenDining/>Ramens</Link>
+                                <Link to={`/category/Cervezas`} className="OptionNav"><SportsBar/>Cervezas</Link>
                             </Stack>
                             {/* <Button className={classes.myButton}>hola</Button> */}
                             {/*href='link' en el button*/}
