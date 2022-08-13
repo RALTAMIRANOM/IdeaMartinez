@@ -4,12 +4,17 @@ import ImageGrid from "../ImageGrid/ImageGrid";
 import { useState } from "react";
 import MainImage from "../MainImage/MainImage";
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from "react-router-dom";
+import './ItemDetail.css'
 
 const ItemDetail = ({name,price,img,category,description,stock}) => {
     const [selectedImage, setSelectedImage] = useState(0);
-
+    const [quantity, setQuantity] = useState(0);
+    // console.log(quantity)
     const handleOnAdd = (quantity) => {
-        console.log(`la cantidad agregada es: ${quantity}`)
+        // console.log(`la cantidad agregada es: ${quantity}`)
+         console.log(quantity)
+        setQuantity(quantity)
     }
     
     return (
@@ -37,7 +42,14 @@ const ItemDetail = ({name,price,img,category,description,stock}) => {
                         <Box mt={2}>
                             <Typography variant="h5">S/. {price}</Typography>
                         </Box>
-                        <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/>
+                        {
+                            quantity === 0 ? (
+                                <ItemCount stock={stock} onAdd={handleOnAdd}/>    
+                            ) : (
+                                <Link to='/cart' className="OptionItem">Finalizar Compra</Link>
+                            )
+                         }
+                        
                         {/* <Button variant="contained" color="primary" style={{marginTop: "auto"}}>
                             Añadir al carrito
                         </Button>  */}

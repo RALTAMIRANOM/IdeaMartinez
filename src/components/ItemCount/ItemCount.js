@@ -17,7 +17,7 @@ const useStyle = makeStyles({
 
     }
 })
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial=1, onAdd}) => {
     const [count, setCount] = useState(initial)
     // const [show, setShow] = useState (true)
     // const [text, setText] = useState('Bienvenido')
@@ -73,7 +73,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                     <IconButton  color="primary" size="medium" onClick={increment}> <Add/> </IconButton >
                     {/* <button onClick={() => onAdd(count)}>Agregar al carrito</button> */}
                 </Stack>
-                <Button variant="outlined" color="primary" size="medium" onClick={onAdd(count)}>Agregar al carrito</Button>
+                <Button variant="outlined" color="primary" size="medium" onClick={() => onAdd(count)}>Agregar al carrito</Button>
             </Box>
         </ThemeProvider>
     )
