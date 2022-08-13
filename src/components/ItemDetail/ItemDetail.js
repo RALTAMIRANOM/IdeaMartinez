@@ -6,17 +6,31 @@ import MainImage from "../MainImage/MainImage";
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from "react-router-dom";
 import './ItemDetail.css'
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
-const ItemDetail = ({name,price,img,category,description,stock}) => {
+const ItemDetail = ({id,name,price,img,category,description,stock}) => {
     const [selectedImage, setSelectedImage] = useState(0);
-    const [quantity, setQuantity] = useState(0);
+    const [quantityToAdd, setQuantityToAdd] = useState(0);
     // console.log(quantity)
+    
+    const {addItem, getProductQuantity} =useContext(CartContext)
+    
     const handleOnAdd = (quantity) => {
         // console.log(`la cantidad agregada es: ${quantity}`)
          console.log(quantity)
-        setQuantity(quantity)
+        setQuantityToAdd(quantity)
+        const productToadd = {
+            id, name, price, quantity
+        }
+
+        addItem(productToadd)
+        
     }
     
+    const productQuantity = getProductQuantity(id)
+    console.log(productQuantity)
+
     return (
         //Mejorar vista del detalle     
         <div>
@@ -43,8 +57,8 @@ const ItemDetail = ({name,price,img,category,description,stock}) => {
                             <Typography variant="h5">S/. {price}</Typography>
                         </Box>
                         {
-                            quantity === 0 ? (
-                                <ItemCount stock={stock} onAdd={handleOnAdd}/>    
+                            quantityToAdd === 0 ? (
+                                <ItemCount stock={stock} onAdd={handleOnAdd} initial={productQuantity}/>    
                             ) : (
                                 <Link to='/cart' className = "OptionItem">Finalizar Compra</Link>
                             )

@@ -55,7 +55,7 @@ const Navbar =() => {
                 <ThemeProvider theme={theme}>
                     <AppBar color="primary">
                         <Toolbar className={classes.separatorPrin}>
-                            <Button href={`/`}>
+                            <Link to={`/`} className="OptionIcon">
                                 <Box display="flex" flexDirection="column" alignItems="center" >
                                     <img src='../images/fastfood.svg' height="40px"></img>
                                     {/*<Fastfood
@@ -63,7 +63,7 @@ const Navbar =() => {
                                     />*/}                            
                                     <h5 className={classes.title} style={{ color: '#ffeb3b' }}>Orlando's Broaster </h5>
                                 </Box>
-                            </Button>
+                            </Link>
                             <Stack spacing={2} direction="row">
                                 <Link to={`/category/Hamburguesas`} className="OptionNav"><LunchDining/>Hamburguesas</Link>
                                 <Link to={`/category/Pizzas`} className="OptionNav"><LocalPizza/>Pizzas</Link>

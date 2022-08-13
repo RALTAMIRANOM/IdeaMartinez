@@ -17,8 +17,8 @@ const useStyle = makeStyles({
 
     }
 })
-const ItemCount = ({stock, initial=1, onAdd}) => {
-    const [count, setCount] = useState(initial)
+const ItemCount = ({stock=0, initial= 1, onAdd}) => {
+    const [quantity, setQuantity] = useState(initial)
     // const [show, setShow] = useState (true)
     // const [text, setText] = useState('Bienvenido')
     // const [title, setTitle] = useState('Hola')
@@ -47,13 +47,13 @@ const ItemCount = ({stock, initial=1, onAdd}) => {
     
     const increment = () => {
         //count++
-        if(count < stock)
-            setCount(count + 1)
+        if(quantity < stock)
+            setQuantity(quantity + 1)
     }
 
     const decrement = () => {
-        if(count > initial)
-            setCount(count - 1)
+        if(quantity > 1)
+            setQuantity(quantity - 1)
     }
 
     // console.log('render')
@@ -67,13 +67,13 @@ const ItemCount = ({stock, initial=1, onAdd}) => {
             <Box display="flex" flexDirection="column" alignItems="center" >
                 <Stack  direction="row" alignItems="center" width="100%" maxWidth="150px" justifyContent="space-between">
                     <IconButton  color="primary" size="medium" onClick={decrement}> <Remove/> </IconButton >
-                    <h4>{count}</h4>
+                    <h4>{quantity}</h4>
                     {/* <button onClick={decrement}>Decrementar</button>
                     <button onClick={increment}>Incrementar</button> */}
                     <IconButton  color="primary" size="medium" onClick={increment}> <Add/> </IconButton >
                     {/* <button onClick={() => onAdd(count)}>Agregar al carrito</button> */}
                 </Stack>
-                <Button variant="outlined" color="primary" size="medium" onClick={() => onAdd(count)}>Agregar al carrito</Button>
+                <Button variant="outlined" color="primary" size="medium" onClick={() => onAdd(quantity)}>Agregar al carrito</Button>
             </Box>
         </ThemeProvider>
     )
