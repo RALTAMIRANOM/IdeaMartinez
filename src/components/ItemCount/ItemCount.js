@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button, IconButton , ThemeProvider, Stack, Box } from '@mui/material';
 import {Remove, Add} from '@mui/icons-material/'
 import theme from '../../themeConfig'
@@ -44,7 +44,9 @@ const ItemCount = ({stock=0, initial= 1, onAdd}) => {
     //     else 
     //         console.log(`la cantidad agregada supera el stock`)
     // }
-    
+    useEffect (() => {
+        setQuantity(initial)
+    }, [initial])
     const increment = () => {
         //count++
         if(quantity < stock)
