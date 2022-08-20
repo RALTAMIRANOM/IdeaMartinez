@@ -10,7 +10,7 @@ import {LunchDining,SportsBar,LocalPizza,RamenDining} from '@mui/icons-material/
 import {makeStyles} from '@mui/styles/'
 import theme from '../../themeConfig'
 import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 
 const useStyle = makeStyles({
     myButton: {
@@ -65,10 +65,10 @@ const Navbar =() => {
                                 </Box>
                             </Link>
                             <Stack spacing={2} direction="row">
-                                <Link to={`/category/Hamburguesas`} className="OptionNav"><LunchDining/>Hamburguesas</Link>
-                                <Link to={`/category/Pizzas`} className="OptionNav"><LocalPizza/>Pizzas</Link>
-                                <Link to={`/category/Ramens`} className="OptionNav"><RamenDining/>Ramens</Link>
-                                <Link to={`/category/Cervezas`} className="OptionNav"><SportsBar/>Cervezas</Link>
+                                <NavLink to={`/category/Hamburguesas`} className={({isActive}) => isActive ? "ActiveOptionNav" : "OptionNav"}><LunchDining/>Hamburguesas</NavLink>
+                                <NavLink to={`/category/Pizzas`} className={({isActive}) => isActive ? "ActiveOptionNav" : "OptionNav"}><LocalPizza/>Pizzas</NavLink>
+                                <NavLink to={`/category/Ramens`} className={({isActive}) => isActive ? "ActiveOptionNav" : "OptionNav"}><RamenDining/>Ramens</NavLink>
+                                <NavLink to={`/category/Cervezas`} className={({isActive}) => isActive ? "ActiveOptionNav" : "OptionNav"}><SportsBar/>Cervezas</NavLink>
                             </Stack>
                             {/* <Button className={classes.myButton}>hola</Button> */}
                             {/*href='link' en el button*/}

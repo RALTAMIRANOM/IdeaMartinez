@@ -19,8 +19,7 @@ const theme = createTheme({
         //main: '#E86524',
         main: '#FFFFFF'
       },
-
-      
+            
     },
   });
 

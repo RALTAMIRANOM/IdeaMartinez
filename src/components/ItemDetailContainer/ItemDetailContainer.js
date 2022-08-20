@@ -22,7 +22,6 @@ const ItemDetailContainer = () => {
     
     return (
         <Grid>
-            <h1>Detalle del producto</h1>
             <ItemDetail {...product}/>
         </Grid>
     )
