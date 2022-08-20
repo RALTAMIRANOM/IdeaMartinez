@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Item = ({product}) => {
     const [selectedImage, setSelectedImage] = useState(0);
+
     return (
         <ThemeProvider theme={theme}>
             <ImageListItem key={product.img[selectedImage].id_img}>
