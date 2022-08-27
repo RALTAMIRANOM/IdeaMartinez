@@ -11,6 +11,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import Order from './components/Order/Order';
 
 const useStyle = makeStyles({
   offset: theme.mixins.toolbar
@@ -49,6 +50,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer greeting='Listado de productos filtrado'/>} />
             <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/order' element={<Order/>} />
             <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
             {/* <button onClick={() =>setShow(!show) }>Mostrar/Ocultar</button> */}
             {/* {show ? <ItemCount /> : 
