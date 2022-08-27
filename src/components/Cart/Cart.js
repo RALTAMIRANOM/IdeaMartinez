@@ -28,6 +28,7 @@ const Cart =() => {
     const navigate = useNavigate()
     const quantity =getQuantity()
 
+
     if (!quantity){
         return (
             <Grid container direction="column" className={classes.alignCart}>
@@ -43,12 +44,16 @@ const Cart =() => {
     return (
         <Grid container direction="column" className={classes.alignCart}>
             <div  className='title'>Tu carrito </div>
-                <Stack spacing={2}>
-                    {cart.map(prod => <ItemCart key={prod.id} {...prod}/>)}
+                <Stack spacing={3} alignItems="center">
+                    <Stack spacing={2}>
+                        {cart.map(prod => <ItemCart key={prod.id} {...prod}/>)}
+                    </Stack>
+                    <div className={classes.title}>Total: S/. {totalToPay}</div>
+                    <Stack spacing={2}  direction="row" >
+                        <Link to='/order' className="OptionCart">Crear Orden</Link>
+                        <button onClick={() => clearCart()} className="OptionCart">Limpiar carrito</button>
+                    </Stack>
                 </Stack>
-                <div className={classes.title}>Total: S/. {totalToPay}</div>
-                <Link to='/order' className="OptionCart">Crear Orden</Link>
-                
         </Grid>
     )
 }
