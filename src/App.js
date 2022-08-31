@@ -59,6 +59,11 @@ function App() {
             {/* <ItemCount stock={10} initial={1} onAdd={handleOnAdd}/> */}
           {/* </div> */}
           </Routes> 
+          <div class="btn-whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=51970284737" target="_blank">
+            <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="Boton WhatsApp" width={"50px"} height={"50px"}/>
+            </a>
+          </div>
         </ThemeProvider>
       </BrowserRouter>
     </CartContextProvider>
