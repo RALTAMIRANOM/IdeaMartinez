@@ -42,5 +42,4 @@ Muestra el NavBar e Order donde se muestra el formulario que debe de llenar el u
 
 Adicionalmente, se añadio el boton de Wpp con un número random para que tener contacto el vendedor 
 ## Gif
-
-https://im5.ezgif.com/tmp/ezgif-5-e79786c4a7.gif
+https://im2.ezgif.com/tmp/ezgif-2-8e3a4b1d1b.gif
