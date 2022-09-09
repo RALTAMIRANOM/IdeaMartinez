@@ -45,9 +45,9 @@ function App() {
           <div className={classes.offset}></div>
           <div className={classes.offset}></div>
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting='Listado de todos los productos' />}/>
+            <Route path='/' element={<ItemListContainer />}/>
             
-            <Route path='/category/:categoryId' element={<ItemListContainer greeting='Listado de productos filtrado'/>} />
+            <Route path='/category/:categoryId' element={<ItemListContainer />} />
             <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
             <Route path='/cart' element={<Cart/>} />
             <Route path='/order' element={<Order/>} />
@@ -60,7 +60,7 @@ function App() {
           {/* </div> */}
           </Routes> 
           <div class="btn-whatsapp">
-            <a href="https://api.whatsapp.com/send?phone=51970284737" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=51999999999" target="_blank">
             <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="Boton WhatsApp" width={"50px"} height={"50px"}/>
             </a>
           </div>

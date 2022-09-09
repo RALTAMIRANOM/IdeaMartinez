@@ -106,9 +106,9 @@ const Order = () => {
     return (
         <>
             <h1>
-                checkout
+                Orden de Compra:
             </h1>
-            <h2>Formulario</h2> 
+            <h2><u>Formulario</u></h2> 
             <Box 
                 sx={{
                     display: 'flex',

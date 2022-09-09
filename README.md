@@ -30,6 +30,17 @@ http://localhost:3000/detail/productId
 
 Muestra el NavBar e ItemDetailContainer donde se muestran el detalle del producto dependiendo del parametro
 
+
+http://localhost:3000/detail/cart
+
+Muestra el NavBar e Cart donde se muestran el detalle del carrito donde se puede eliminar algún producto o limpiar el mismo
+
+
+http://localhost:3000/detail/order
+
+Muestra el NavBar e Order donde se muestra el formulario que debe de llenar el usuario para que se le envie los productos
+
+Adicionalmente, se añadio el boton de Wpp con un número random para que tener contacto el vendedor 
 ## Gif
 
 https://im5.ezgif.com/tmp/ezgif-5-e79786c4a7.gif
